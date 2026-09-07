@@ -17,8 +17,5 @@ lib/
 Thumbs.db
 .DS_Store
 Desktop.ini
-# Local mascot image assets (self-provided, not published)
-*.gif
-
 # Runtime logs
 *.log

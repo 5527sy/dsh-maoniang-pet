@@ -9,6 +9,8 @@
  */
 import { useEffect, useRef, useState } from 'react'
 import type { CSSProperties, PointerEvent as ReactPointerEvent } from 'react'
+import { DEFAULT_MASCOT_SRC } from './mascot-gif.ts'
+import { REACTION_MASCOT_SRC } from './mascot-reaction-gif.ts'
 
 const SIDEBAR_DEFAULT = 280
 
@@ -19,18 +21,18 @@ const REACTION_KEY = 's2s.mascot.reaction'
 function readMascotSrc(): string {
   try {
     const value = localStorage.getItem(SRC_KEY)
-    return value !== null ? value.trim() : ''
+    return value !== null ? value.trim() : DEFAULT_MASCOT_SRC
   } catch {
-    return ''
+    return DEFAULT_MASCOT_SRC
   }
 }
 
 function readReactionSrc(): string {
   try {
     const value = localStorage.getItem(REACTION_KEY)
-    return value !== null ? value.trim() : ''
+    return value !== null ? value.trim() : REACTION_MASCOT_SRC
   } catch {
-    return ''
+    return REACTION_MASCOT_SRC
   }
 }
 
@@ -147,7 +149,7 @@ export function Mascot() {
 
   // Live swap hook: run `window.__dshMaoniangPetSetMascot('https://.../x.gif')`
   // in the browser console, or set localStorage key `s2s.mascot.src`. An empty
-  // string returns to the built-in SVG; remove the key to restore the built-in SVG.
+  // string returns to the built-in SVG; remove the key to restore the bundled GIF.
   useEffect(() => {
     const applyBase = (value: string): void => {
       setBaseSrc(value)
