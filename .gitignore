@@ -1,0 +1,24 @@
+# Python virtualenv & caches
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+dist-*/
+
+# Node build/install artifacts
+node_modules/
+lib/
+*.tgz
+.dsh-test-home/
+
+# OS noise
+Thumbs.db
+.DS_Store
+Desktop.ini
+# Local mascot image assets (self-provided, not published)
+*.gif
+
+# Runtime logs
+*.log

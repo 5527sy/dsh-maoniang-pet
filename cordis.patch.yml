@@ -1,0 +1,4 @@
+# Add the browser plugin without modifying the DeepSeek Harness installation.
+- insert:
+    - id: maoniang-pet
+      name: dsh-maoniang-pet
